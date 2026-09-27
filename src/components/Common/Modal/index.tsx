@@ -90,7 +90,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
     return ReactDOM.createPortal(
       <TransitionChild
         as="div"
-        className="fixed bottom-0 left-0 right-0 top-0 z-50 flex h-full w-full items-center justify-center bg-gray-800/70"
+        className="fixed bottom-0 left-0 right-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black/50 backdrop-blur-sm"
         enter="transition-opacity duration-300"
         enterFrom="opacity-0"
         enterTo="opacity-100"
@@ -115,7 +115,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
           </div>
         </Transition>
         <Transition
-          className={`hide-scrollbar relative inline-block w-full overflow-auto bg-gray-800 px-4 pb-4 pt-4 text-left align-bottom shadow-xl ring-1 ring-gray-700 transition-all sm:my-8 sm:max-w-3xl sm:rounded-lg sm:align-middle ${dialogClass}`}
+          className={`hide-scrollbar glass-panel-strong relative inline-block w-full overflow-auto px-4 pb-4 pt-4 text-left align-bottom transition-all sm:my-8 sm:max-w-3xl sm:rounded-2xl sm:align-middle ${dialogClass}`}
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-headline"
@@ -147,7 +147,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
                 className="absolute inset-0"
                 style={{
                   backgroundImage:
-                    'linear-gradient(180deg, rgba(31, 41, 55, 0.75) 0%, rgba(31, 41, 55, 1) 100%)',
+                    'linear-gradient(180deg, rgba(17, 24, 39, 0.6) 0%, rgba(17, 24, 39, 0.92) 100%)',
                 }}
               />
             </div>
@@ -160,7 +160,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
                 <div className="flex flex-col space-y-1">
                   {title && (
                     <span
-                      className="text-overseerr truncate pb-0.5 text-2xl font-bold leading-6"
+                      className="text-brand-gradient truncate pb-0.5 text-2xl font-bold leading-6"
                       id="modal-headline"
                       data-testid="modal-title"
                     >

@@ -8,7 +8,7 @@ type TagProps = {
 
 const Tag = ({ children, iconSvg }: TagProps) => {
   return (
-    <div className="inline-flex cursor-pointer items-center rounded-full bg-gray-800 px-2 py-1 text-sm leading-snug text-gray-200 ring-1 ring-inset ring-gray-600 transition hover:bg-gray-700">
+    <div className="inline-flex cursor-pointer items-center rounded-full border border-white/10 bg-white/10 px-2 py-1 text-sm leading-snug text-gray-200 backdrop-blur-md transition hover:bg-white/15">
       {iconSvg ? (
         React.cloneElement(iconSvg, {
           className: 'mr-1 h-4 w-4',

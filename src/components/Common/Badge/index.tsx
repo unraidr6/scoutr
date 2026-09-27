@@ -53,15 +53,19 @@ const Badge = (
       }
       break;
     case 'dark':
-      badgeStyle.push('bg-gray-900 !text-gray-400');
+      badgeStyle.push(
+        'border border-white/10 bg-white/5 backdrop-blur-md !text-gray-400'
+      );
       if (href) {
-        badgeStyle.push('hover:bg-gray-800');
+        badgeStyle.push('hover:bg-white/10');
       }
       break;
     case 'light':
-      badgeStyle.push('bg-gray-700 !text-gray-300');
+      badgeStyle.push(
+        'border border-white/10 bg-white/10 backdrop-blur-md !text-gray-300'
+      );
       if (href) {
-        badgeStyle.push('hover:bg-gray-600');
+        badgeStyle.push('hover:bg-white/15');
       }
       break;
     default:

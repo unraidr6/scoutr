@@ -162,7 +162,7 @@ const Sidebar = ({
               leaveTo="opacity-0"
             >
               <div className="fixed inset-0">
-                <div className="absolute inset-0 bg-gray-900 opacity-90" />
+                <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
               </div>
             </TransitionChild>
             <TransitionChild
@@ -175,10 +175,10 @@ const Sidebar = ({
               leaveTo="-translate-x-full"
             >
               <>
-                <div className="sidebar relative flex h-full w-full max-w-xs flex-1 flex-col bg-gray-800">
+                <div className="sidebar relative flex h-full w-full max-w-xs flex-1 flex-col">
                   <div className="sidebar-close-button absolute right-0 -mr-14 p-1">
                     <button
-                      className="flex h-12 w-12 items-center justify-center rounded-full focus:bg-gray-600 focus:outline-none"
+                      className="flex h-12 w-12 items-center justify-center rounded-full focus:bg-white/10 focus:outline-none"
                       aria-label="Close sidebar"
                       onClick={() => setClosed()}
                     >
@@ -219,8 +219,8 @@ const Sidebar = ({
                             tabIndex={0}
                             className={`flex items-center rounded-md px-2 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out focus:outline-none ${
                               router.pathname.match(sidebarLink.activeRegExp)
-                                ? 'bg-gradient-to-br from-amber-600 to-purple-600 hover:from-amber-500 hover:to-purple-500'
-                                : 'hover:bg-gray-700 focus:bg-gray-700'
+                                ? 'bg-gradient-to-br from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500'
+                                : 'hover:bg-white/10 focus:bg-white/10'
                             } `}
                             data-testid={`${sidebarLink.dataTestId}-mobile`}
                           >
@@ -279,8 +279,8 @@ const Sidebar = ({
                       as={sidebarLink.as}
                       className={`group flex items-center rounded-md px-2 py-2 text-lg font-medium leading-6 text-white transition duration-150 ease-in-out focus:outline-none ${
                         router.pathname.match(sidebarLink.activeRegExp)
-                          ? 'bg-gradient-to-br from-amber-600 to-purple-600 hover:from-amber-500 hover:to-purple-500'
-                          : 'hover:bg-gray-700 focus:bg-gray-700'
+                          ? 'bg-gradient-to-br from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500'
+                          : 'hover:bg-white/10 focus:bg-white/10'
                       } `}
                       data-testid={sidebarLink.dataTestId}
                     >
@@ -295,8 +295,8 @@ const Sidebar = ({
                             <Badge
                               className={`rounded-md bg-gradient-to-br ${
                                 router.pathname.match(sidebarLink.activeRegExp)
-                                  ? 'border-amber-600 from-amber-700 to-purple-700'
-                                  : 'border-amber-500 from-amber-600 to-purple-600'
+                                  ? 'border-cyan-600 from-cyan-600 to-blue-700'
+                                  : 'border-cyan-500 from-cyan-500 to-blue-600'
                               }`}
                             >
                               {pendingRequestsCount}
@@ -310,8 +310,8 @@ const Sidebar = ({
                             <Badge
                               className={`rounded-md bg-gradient-to-br ${
                                 router.pathname.match(sidebarLink.activeRegExp)
-                                  ? 'border-amber-600 from-amber-700 to-purple-700'
-                                  : 'border-amber-500 from-amber-600 to-purple-600'
+                                  ? 'border-cyan-600 from-cyan-600 to-blue-700'
+                                  : 'border-cyan-500 from-cyan-500 to-blue-600'
                               }`}
                             >
                               {openIssuesCount}

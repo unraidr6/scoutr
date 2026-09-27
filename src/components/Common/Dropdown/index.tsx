@@ -30,7 +30,7 @@ const DropdownItem = ({
         className={[
           'button-md flex cursor-pointer items-center rounded px-4 py-2 text-sm leading-5 text-white focus:text-white focus:outline-none',
           buttonType === 'ghost'
-            ? 'bg-transparent from-amber-600 to-purple-600 hover:bg-gradient-to-br focus:border-gray-500'
+            ? 'bg-transparent from-cyan-500 to-blue-600 hover:bg-gradient-to-br focus:border-gray-500'
             : 'bg-amber-600 hover:bg-amber-500 focus:border-amber-700',
         ].join(' ')}
         {...props}
@@ -63,10 +63,8 @@ const DropdownItems = ({
     >
       <MenuItems
         className={[
-          'absolute right-0 z-40 -mr-1 mt-2 w-56 origin-top-right rounded-md p-1 shadow-lg',
-          dropdownType === 'ghost'
-            ? 'border border-gray-700 bg-gray-800/80 backdrop-blur'
-            : 'bg-amber-600',
+          'absolute right-0 z-40 -mr-1 mt-2 w-56 origin-top-right rounded-2xl p-1',
+          dropdownType === 'ghost' ? 'glass-panel-strong' : 'bg-amber-600',
           className,
         ].join(' ')}
         {...props}

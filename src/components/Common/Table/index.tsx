@@ -6,7 +6,7 @@ type TBodyProps = {
 
 const TBody = ({ children }: TBodyProps) => {
   return (
-    <tbody className="divide-y divide-gray-700 bg-gray-800">{children}</tbody>
+    <tbody className="divide-y divide-white/10 bg-white/[0.03]">{children}</tbody>
   );
 };
 
@@ -16,7 +16,7 @@ const TH = ({
   ...props
 }: React.ComponentPropsWithoutRef<'th'>) => {
   const style = [
-    'px-4 py-3 bg-gray-500 text-left text-xs leading-4 font-medium text-gray-200 uppercase tracking-wider truncate',
+    'px-4 py-3 bg-white/10 backdrop-blur-md text-left text-xs leading-4 font-medium text-gray-200 uppercase tracking-wider truncate',
   ];
 
   if (className) {
@@ -80,7 +80,7 @@ const Table = ({ children }: TableProps) => {
     <div className="flex flex-col">
       <div className="-mx-4 my-2 overflow-x-auto md:mx-0 lg:mx-0">
         <div className="inline-block min-w-full py-2 align-middle">
-          <div className="overflow-hidden rounded-lg shadow md:mx-0 lg:mx-0">
+          <div className="glass-panel overflow-hidden rounded-2xl md:mx-0 lg:mx-0">
             <table className="min-w-full">{children}</table>
           </div>
         </div>

@@ -179,7 +179,7 @@ const MobileMenu = ({
         leave="transition duration-500"
         leaveFrom="opacity-100 -translate-y-full"
         leaveTo="opacity-0 translate-y-0"
-        className="absolute left-0 right-0 top-0 flex w-full -translate-y-full flex-col space-y-6 border-t border-gray-600 bg-gray-900/90 px-6 py-6 font-semibold text-gray-100 backdrop-blur"
+        className="absolute left-0 right-0 top-0 flex w-full -translate-y-full flex-col space-y-6 border-t border-white/10 bg-black/60 px-6 py-6 font-semibold text-gray-100 backdrop-blur-xl backdrop-saturate-150"
       >
         {filteredLinks.map((link) => {
           const isActive = router.pathname.match(link.activeRegExp);
@@ -188,7 +188,7 @@ const MobileMenu = ({
               key={`mobile-menu-link-${link.href}`}
               href={link.href}
               className={`flex items-center ${
-                isActive ? 'text-amber-500' : ''
+                isActive ? 'text-cyan-400' : ''
               }`}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
@@ -207,7 +207,7 @@ const MobileMenu = ({
                 pendingRequestsCount > 0 &&
                 hasPermission(Permission.MANAGE_REQUESTS) && (
                   <div className="ml-auto flex">
-                    <Badge className="rounded-md border-amber-500 bg-gradient-to-br from-amber-600 to-purple-600">
+                    <Badge className="rounded-md border-cyan-500 bg-gradient-to-br from-cyan-500 to-blue-600">
                       {pendingRequestsCount}
                     </Badge>
                   </div>
@@ -216,7 +216,7 @@ const MobileMenu = ({
                 openIssuesCount > 0 &&
                 hasPermission(Permission.MANAGE_ISSUES) && (
                   <div className="ml-auto flex">
-                    <Badge className="rounded-md border-amber-500 bg-gradient-to-br from-amber-600 to-purple-600">
+                    <Badge className="rounded-md border-cyan-500 bg-gradient-to-br from-cyan-500 to-blue-600">
                       {openIssuesCount}
                     </Badge>
                   </div>
@@ -225,7 +225,7 @@ const MobileMenu = ({
           );
         })}
       </Transition>
-      <div className="padding-bottom-safe border-t border-gray-600 bg-gray-800/90 backdrop-blur">
+      <div className="padding-bottom-safe border-t border-white/10 bg-black/50 backdrop-blur-xl backdrop-saturate-150">
         <div className="flex h-full items-center justify-between px-6 py-4 text-gray-100">
           {filteredLinks
             .slice(0, filteredLinks.length === 5 ? 5 : 4)
@@ -237,7 +237,7 @@ const MobileMenu = ({
                   key={`mobile-menu-link-${link.href}`}
                   href={link.href}
                   className={`relative flex flex-col items-center space-y-1 ${
-                    isActive ? 'text-amber-500' : ''
+                    isActive ? 'text-cyan-400' : ''
                   }`}
                 >
                   {cloneElement(
@@ -253,8 +253,8 @@ const MobileMenu = ({
                         <Badge
                           className={`bg-gradient-to-br ${
                             router.pathname.match(link.activeRegExp)
-                              ? 'border-amber-600 from-amber-700 to-purple-700'
-                              : 'border-amber-500 from-amber-600 to-purple-600'
+                              ? 'border-cyan-600 from-cyan-600 to-blue-700'
+                              : 'border-cyan-500 from-cyan-500 to-blue-600'
                           } flex ${
                             pendingRequestsCount > 99 ? 'w-6' : 'w-4'
                           } h-4 items-center justify-center !px-[5px] !py-[7px] text-[8px]`}
