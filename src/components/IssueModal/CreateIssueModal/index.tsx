@@ -255,7 +255,7 @@ const CreateIssueModal = ({
                           ? 'rounded-bl-md rounded-br-md'
                           : '',
                         checked
-                          ? 'z-10 border border-indigo-500 bg-indigo-400/20'
+                          ? 'z-10 border border-amber-500 bg-amber-400/20'
                           : 'border-gray-500',
                         'relative flex cursor-pointer border p-4 focus:outline-none'
                       )
@@ -266,10 +266,10 @@ const CreateIssueModal = ({
                         <span
                           className={`${
                             checked
-                              ? 'border-transparent bg-indigo-600'
+                              ? 'border-transparent bg-amber-600'
                               : 'border-gray-300 bg-white'
                           } ${
-                            focus ? 'ring-2 ring-indigo-300 ring-offset-2' : ''
+                            focus ? 'ring-2 ring-amber-300 ring-offset-2' : ''
                           } mt-0.5 flex h-4 w-4 cursor-pointer items-center justify-center rounded-full border`}
                           aria-hidden="true"
                         >
@@ -279,7 +279,7 @@ const CreateIssueModal = ({
                           <Label
                             as="span"
                             className={`block text-sm font-medium ${
-                              checked ? 'text-indigo-100' : 'text-gray-100'
+                              checked ? 'text-amber-100' : 'text-gray-100'
                             }`}
                           >
                             {intl.formatMessage(setting.name)}

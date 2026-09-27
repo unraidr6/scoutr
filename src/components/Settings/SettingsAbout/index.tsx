@@ -160,7 +160,7 @@ const SettingsAbout = () => {
               href="https://docs.seerr.dev"
               target="_blank"
               rel="noreferrer"
-              className="text-indigo-500 transition duration-300 hover:underline"
+              className="text-amber-500 transition duration-300 hover:underline"
             >
               https://docs.seerr.dev
             </a>
@@ -170,7 +170,7 @@ const SettingsAbout = () => {
               href="https://github.com/seerr-team/seerr/discussions"
               target="_blank"
               rel="noreferrer"
-              className="text-indigo-500 transition duration-300 hover:underline"
+              className="text-amber-500 transition duration-300 hover:underline"
             >
               https://github.com/seerr-team/seerr/discussions
             </a>
@@ -180,7 +180,7 @@ const SettingsAbout = () => {
               href="https://discord.gg/seerr"
               target="_blank"
               rel="noreferrer"
-              className="text-indigo-500 transition duration-300 hover:underline"
+              className="text-amber-500 transition duration-300 hover:underline"
             >
               https://discord.gg/seerr
             </a>
@@ -194,7 +194,7 @@ const SettingsAbout = () => {
               href="https://opencollective.com/seerr"
               target="_blank"
               rel="noreferrer"
-              className="text-indigo-500 transition duration-300 hover:underline"
+              className="text-amber-500 transition duration-300 hover:underline"
             >
               https://opencollective.com/seerr
             </a>

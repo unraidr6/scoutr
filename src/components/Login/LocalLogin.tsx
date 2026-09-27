@@ -165,7 +165,7 @@ const LocalLogin = ({ revalidate }: LocalLoginProps) => {
                     {passwordResetEnabled && (
                       <Link
                         href="/resetpassword"
-                        className="pt-2 text-sm text-indigo-500 hover:text-indigo-400"
+                        className="pt-2 text-sm text-amber-500 hover:text-amber-400"
                       >
                         {intl.formatMessage(messages.forgotpassword)}
                       </Link>

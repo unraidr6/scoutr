@@ -1,5 +1,6 @@
 {
-  "name": "seerr",
+  "name": "scoutr",
+  "description": "The scout for your media library — a self-hosted request manager for Jellyfin, Plex, and Emby.",
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@10.24.0",

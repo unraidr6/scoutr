@@ -1,0 +1,13 @@
+services:
+  scoutr:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    environment:
+      DB_TYPE: 'sqlite' # Scoutr defaults to postgres; set this to opt back into SQLite
+    ports:
+      - 5055:5055
+    volumes:
+      - .:/app:rw,cached
+      - /app/node_modules
+      - /app/.next

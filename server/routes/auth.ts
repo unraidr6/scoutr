@@ -406,7 +406,7 @@ authRoutes.post('/jellyfin', async (req, res, next) => {
         account.AccessToken,
         deviceId
       );
-      const apiKey = await jellyfinClient.createApiToken('Seerr');
+      const apiKey = await jellyfinClient.createApiToken('Scoutr');
 
       const serverName = await jellyfinserver.getServerName();
 

@@ -1,6 +1,6 @@
 {
-  "name": "Seerr",
-  "short_name": "Seerr",
+  "name": "Scoutr",
+  "short_name": "Scoutr",
   "start_url": "./",
   "icons": [
     {
@@ -28,8 +28,8 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#1f2937",
-  "background_color": "#1f2937",
+  "theme_color": "#1e293b",
+  "background_color": "#1e293b",
   "display": "standalone",
   "shortcuts": [
     {
