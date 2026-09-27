@@ -42,33 +42,33 @@ export async function seedTestUsers(): Promise<void> {
   // Create the admin user
   const user =
     (await userRepository.findOne({
-      where: { email: 'admin@seerr.dev' },
+      where: { email: 'admin@scoutr.dev' },
     })) ?? new User();
   user.plexId = admin?.plexId ?? 1;
   user.plexToken = '1234';
   user.plexUsername = 'admin';
   user.username = 'admin';
-  user.email = 'admin@seerr.dev';
+  user.email = 'admin@scoutr.dev';
   user.userType = UserType.PLEX;
   user.password = TEST_USER_PASSWORD_HASH;
   user.permissions = 2;
-  user.avatar = gravatarUrl('admin@seerr.dev', { default: 'mm', size: 200 });
+  user.avatar = gravatarUrl('admin@scoutr.dev', { default: 'mm', size: 200 });
   await userRepository.save(user);
 
   // Create the other user
   const otherUser =
     (await userRepository.findOne({
-      where: { email: 'demo@seerr.dev' },
+      where: { email: 'demo@scoutr.dev' },
     })) ?? new User();
   otherUser.plexId = admin?.plexId ?? 1;
   otherUser.plexToken = '1234';
   otherUser.plexUsername = 'demo';
   otherUser.username = 'demo';
-  otherUser.email = 'demo@seerr.dev';
+  otherUser.email = 'demo@scoutr.dev';
   otherUser.userType = UserType.PLEX;
   otherUser.password = TEST_USER_PASSWORD_HASH;
   otherUser.permissions = 32;
-  otherUser.avatar = gravatarUrl('demo@seerr.dev', {
+  otherUser.avatar = gravatarUrl('demo@scoutr.dev', {
     default: 'mm',
     size: 200,
   });

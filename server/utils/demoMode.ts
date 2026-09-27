@@ -20,7 +20,7 @@ async function resetDemoData(): Promise<void> {
     // Add the default users
     await seedTestUsers();
     // Remove admin user from the database
-    await dataSource.getRepository('user').delete({ email: 'admin@seerr.dev' });
+    await dataSource.getRepository('user').delete({ email: 'admin@scoutr.dev' });
     // Re-seed discover sliders
     await DiscoverSlider.bootstrapSliders();
   } catch (error) {
@@ -36,7 +36,7 @@ export async function initDemoData(server: Express): Promise<void> {
     (userCount === 1 &&
       !(await dataSource
         .getRepository('user')
-        .findOneBy({ email: 'demo@seerr.dev' })))
+        .findOneBy({ email: 'demo@scoutr.dev' })))
   ) {
     logger.error('Database is not empty, cannot seed demo data. Aborting.');
     process.exit(1);
@@ -63,7 +63,7 @@ export async function initDemoData(server: Express): Promise<void> {
 
   // Disable password sign-in for non-demo users
   server.post('/api/v1/auth/local', async (req, res, next) => {
-    if (req.body?.email !== 'demo@seerr.dev') {
+    if (req.body?.email !== 'demo@scoutr.dev') {
       return res.status(403).json({ error: 'Password sign-in is disabled.' });
     }
     next();

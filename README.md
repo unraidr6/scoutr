@@ -7,8 +7,6 @@
 
 **Scoutr** is the scout for your media library — a self-hosted request manager for [Jellyfin](https://jellyfin.org), [Plex](https://plex.tv), and [Emby](https://emby.media/). It integrates with your existing services, such as **[Sonarr](https://sonarr.tv/)** and **[Radarr](https://radarr.video/)**.
 
-Scoutr is a personal, rebranded fork of [Seerr](https://github.com/seerr-team/seerr) (itself descended from Overseerr and Jellyseerr), running on PostgreSQL by default instead of SQLite. All credit for the underlying application goes to the Seerr, Jellyseerr, and Overseerr teams and contributors — see [LICENSE](./LICENSE).
-
 ## Current Features
 
 - Full Jellyfin/Emby/Plex integration including authentication with user import & management.
@@ -25,8 +23,6 @@ Scoutr is a personal, rebranded fork of [Seerr](https://github.com/seerr-team/se
 - Support for watchlisting & blocklisting media.
 
 ## Getting Started
-
-Scoutr is a straight reskin of Seerr, so [Seerr's own documentation](https://docs.seerr.dev/getting-started/) covers setup, configuration, and usage — only the name, look, and default database differ here.
 
 To run Scoutr with the bundled Postgres container:
 
@@ -50,4 +46,4 @@ You can access the API documentation from your local Scoutr install at http://lo
 
 ## Contributing
 
-This is a personal fork maintained for one instance, not an active open-source project. Issues and PRs against upstream Seerr belong in the [Seerr repository](https://github.com/seerr-team/seerr).
+This is a personal project maintained for one instance, not an actively developed open-source project.

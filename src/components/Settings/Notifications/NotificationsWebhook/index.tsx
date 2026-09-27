@@ -12,14 +12,10 @@ import {
   PlusIcon,
   TrashIcon,
 } from '@heroicons/react/24/outline';
-import {
-  ArrowPathIcon,
-  QuestionMarkCircleIcon,
-} from '@heroicons/react/24/solid';
+import { ArrowPathIcon } from '@heroicons/react/24/solid';
 import axios from 'axios';
 import { Field, Form, Formik } from 'formik';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
 import useSWR from 'swr';
@@ -107,7 +103,6 @@ const messages = defineMessages(
     resetPayload: 'Reset to Default',
     resetPayloadSuccess: 'JSON payload reset successfully!',
     customJson: 'JSON Payload',
-    templatevariablehelp: 'Template Variable Help',
     validationWebhookUrl: 'You must provide a valid URL',
     validationTypes: 'You must select at least one notification type',
   }
@@ -363,27 +358,6 @@ const NotificationsWebhook = () => {
                 />
               </div>
             </div>
-            {values.supportVariables && (
-              <div className="mt-2">
-                <Link
-                  href="https://docs.seerr.dev/using-seerr/notifications/webhook#template-variables"
-                  passHref
-                  legacyBehavior
-                >
-                  <Button
-                    as="a"
-                    buttonSize="sm"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <QuestionMarkCircleIcon />
-                    <span>
-                      {intl.formatMessage(messages.templatevariablehelp)}
-                    </span>
-                  </Button>
-                </Link>
-              </div>
-            )}
             <div className="form-row">
               <label htmlFor="webhookUrl" className="text-label">
                 {intl.formatMessage(messages.webhookUrl)}
@@ -533,23 +507,6 @@ const NotificationsWebhook = () => {
                     <ArrowPathIcon />
                     <span>{intl.formatMessage(messages.resetPayload)}</span>
                   </Button>
-                  <Link
-                    href="https://docs.seerr.dev/using-seerr/notifications/webhook#template-variables"
-                    passHref
-                    legacyBehavior
-                  >
-                    <Button
-                      as="a"
-                      buttonSize="sm"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <QuestionMarkCircleIcon />
-                      <span>
-                        {intl.formatMessage(messages.templatevariablehelp)}
-                      </span>
-                    </Button>
-                  </Link>
                 </div>
               </div>
             </div>

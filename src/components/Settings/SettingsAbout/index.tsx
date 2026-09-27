@@ -17,22 +17,20 @@ import useSWR from 'swr';
 
 const messages = defineMessages('components.Settings.SettingsAbout', {
   about: 'About',
-  aboutseerr: 'About Seerr',
+  aboutseerr: 'About Scoutr',
   version: 'Version',
   totalmedia: 'Total Media',
   totalrequests: 'Total Requests',
   gettingsupport: 'Getting Support',
-  githubdiscussions: 'GitHub Discussions',
+  githubissues: 'GitHub Issues',
   timezone: 'Time Zone',
   appDataPath: 'Data Directory',
-  supportseerr: 'Support Seerr',
-  contribute: 'Make a Contribution',
   documentation: 'Documentation',
   outofdate: 'Out of Date',
   uptodate: 'Up to Date',
   versionCheckDisabled: 'Version Check Disabled',
   runningDevelop:
-    'You are running the <code>develop</code> branch of Seerr, which is only recommended for those contributing to development or assisting with bleeding-edge testing.',
+    'You are running the <code>develop</code> branch of Scoutr, which is only recommended for those contributing to development or assisting with bleeding-edge testing.',
 });
 
 const SettingsAbout = () => {
@@ -86,8 +84,8 @@ const SettingsAbout = () => {
                   <a
                     href={
                       data.version.startsWith('develop-')
-                        ? `https://github.com/seerr-team/seerr/compare/${status.commitTag}...develop`
-                        : 'https://github.com/seerr-team/seerr/releases'
+                        ? `https://github.com/unraidr6/scoutr/compare/${status.commitTag}...develop`
+                        : 'https://github.com/unraidr6/scoutr/releases'
                     }
                     target="_blank"
                     rel="noopener noreferrer"
@@ -103,8 +101,8 @@ const SettingsAbout = () => {
                   <a
                     href={
                       data.version.startsWith('develop-')
-                        ? 'https://github.com/seerr-team/seerr/commits/develop'
-                        : 'https://github.com/seerr-team/seerr/releases'
+                        ? 'https://github.com/unraidr6/scoutr/commits/develop'
+                        : 'https://github.com/unraidr6/scoutr/releases'
                     }
                     target="_blank"
                     rel="noopener noreferrer"
@@ -122,8 +120,8 @@ const SettingsAbout = () => {
               <a
                 href={
                   data.version.startsWith('develop-')
-                    ? 'https://github.com/seerr-team/seerr/commits/develop'
-                    : 'https://github.com/seerr-team/seerr/releases'
+                    ? 'https://github.com/unraidr6/scoutr/commits/develop'
+                    : 'https://github.com/unraidr6/scoutr/releases'
                 }
                 target="_blank"
                 rel="noopener noreferrer"
@@ -157,46 +155,22 @@ const SettingsAbout = () => {
         <List title={intl.formatMessage(messages.gettingsupport)}>
           <List.Item title={intl.formatMessage(messages.documentation)}>
             <a
-              href="https://docs.seerr.dev"
+              href="https://github.com/unraidr6/scoutr"
               target="_blank"
               rel="noreferrer"
               className="text-amber-500 transition duration-300 hover:underline"
             >
-              https://docs.seerr.dev
+              https://github.com/unraidr6/scoutr
             </a>
           </List.Item>
-          <List.Item title={intl.formatMessage(messages.githubdiscussions)}>
+          <List.Item title={intl.formatMessage(messages.githubissues)}>
             <a
-              href="https://github.com/seerr-team/seerr/discussions"
+              href="https://github.com/unraidr6/scoutr/issues"
               target="_blank"
               rel="noreferrer"
               className="text-amber-500 transition duration-300 hover:underline"
             >
-              https://github.com/seerr-team/seerr/discussions
-            </a>
-          </List.Item>
-          <List.Item title="Discord">
-            <a
-              href="https://discord.gg/seerr"
-              target="_blank"
-              rel="noreferrer"
-              className="text-amber-500 transition duration-300 hover:underline"
-            >
-              https://discord.gg/seerr
-            </a>
-          </List.Item>
-        </List>
-      </div>
-      <div className="section">
-        <List title={intl.formatMessage(messages.supportseerr)}>
-          <List.Item title={intl.formatMessage(messages.contribute)}>
-            <a
-              href="https://opencollective.com/seerr"
-              target="_blank"
-              rel="noreferrer"
-              className="text-amber-500 transition duration-300 hover:underline"
-            >
-              https://opencollective.com/seerr
+              https://github.com/unraidr6/scoutr/issues
             </a>
           </List.Item>
         </List>

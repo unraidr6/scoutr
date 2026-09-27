@@ -76,14 +76,14 @@ class GithubAPI extends ExternalAPI {
     );
   }
 
-  public async getSeerrReleases({
+  public async getScoutrReleases({
     take = 20,
   }: {
     take?: number;
   } = {}): Promise<GitHubRelease[]> {
     try {
       const data = await this.get<GitHubRelease[]>(
-        '/repos/seerr-team/seerr/releases',
+        '/repos/unraidr6/scoutr/releases',
         {
           params: {
             per_page: take,
@@ -94,14 +94,14 @@ class GithubAPI extends ExternalAPI {
       return data;
     } catch (e) {
       logger.warn(
-        "Failed to retrieve GitHub releases. This may be an issue on GitHub's end. Seerr can't check if it's on the latest version.",
+        "Failed to retrieve GitHub releases. This may be an issue on GitHub's end. Scoutr can't check if it's on the latest version.",
         { label: 'GitHub API', errorMessage: e.message }
       );
       return [];
     }
   }
 
-  public async getSeerrCommits({
+  public async getScoutrCommits({
     take = 20,
     branch = 'develop',
   }: {
@@ -110,7 +110,7 @@ class GithubAPI extends ExternalAPI {
   } = {}): Promise<GithubCommit[]> {
     try {
       const data = await this.get<GithubCommit[]>(
-        '/repos/seerr-team/seerr/commits',
+        '/repos/unraidr6/scoutr/commits',
         {
           params: {
             per_page: take,
@@ -122,7 +122,7 @@ class GithubAPI extends ExternalAPI {
       return data;
     } catch (e) {
       logger.warn(
-        "Failed to retrieve GitHub commits. This may be an issue on GitHub's end. Seerr can't check if it's on the latest version.",
+        "Failed to retrieve GitHub commits. This may be an issue on GitHub's end. Scoutr can't check if it's on the latest version.",
         { label: 'GitHub API', errorMessage: e.message }
       );
       return [];

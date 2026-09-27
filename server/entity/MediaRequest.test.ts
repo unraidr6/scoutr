@@ -50,7 +50,7 @@ async function seedRequester(movieQuotaLimit: number): Promise<User> {
   const userRepository = getRepository(User);
 
   const requester = await userRepository.findOneOrFail({
-    where: { email: 'demo@seerr.dev' },
+    where: { email: 'demo@scoutr.dev' },
   });
   requester.movieQuotaLimit = movieQuotaLimit;
 
@@ -125,7 +125,7 @@ describe('MediaRequest.request', () => {
   it('rejects a concurrent duplicate request from a different user', async () => {
     const requestRepository = getRepository(MediaRequest);
     const requester = await seedRequester(5);
-    const otherRequester = await createRequester('second@seerr.dev');
+    const otherRequester = await createRequester('second@scoutr.dev');
 
     const results = await Promise.allSettled(
       [requester, otherRequester].map((user) =>
@@ -145,7 +145,7 @@ describe('MediaRequest.request', () => {
   it('gives an overlapping season to only one of two concurrent users', async () => {
     const seasonRequestRepository = getRepository(SeasonRequest);
     const requester = await seedRequester(5);
-    const otherRequester = await createRequester('second@seerr.dev');
+    const otherRequester = await createRequester('second@scoutr.dev');
 
     const results = await Promise.allSettled(
       [
@@ -177,7 +177,7 @@ describe('MediaRequest.request', () => {
     const requestRepository = getRepository(MediaRequest);
     const requester = await seedRequester(5);
     const otherRequester = await createRequester(
-      'second@seerr.dev',
+      'second@scoutr.dev',
       Permission.REQUEST_4K
     );
 

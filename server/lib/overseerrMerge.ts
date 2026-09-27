@@ -35,7 +35,7 @@ const checkOverseerrMerge = async (): Promise<boolean> => {
 
   // We have to replace Jellyseerr migrations not working with Overseerr with a custom one
   try {
-    // Filter out the Jellyseerr migrations and replace them with the Seerr migration
+    // Filter out the Jellyseerr migrations and replace them with the Scoutr migration
     // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
     const newMigrations: MixedList<string | Function> = migrations
       ?.filter(
@@ -56,7 +56,7 @@ const checkOverseerrMerge = async (): Promise<boolean> => {
     });
   } catch (error) {
     logger.error('Failed to load migrations for Overseerr merge', {
-      label: 'Seerr Migration',
+      label: 'Scoutr Migration',
       error: error.message,
     });
     process.exit(1);
@@ -76,7 +76,7 @@ const checkOverseerrMerge = async (): Promise<boolean> => {
     );
   } catch (error) {
     logger.error('Failed to insert migration records', {
-      label: 'Seerr Migration',
+      label: 'Scoutr Migration',
       error: error.message,
     });
     process.exit(1);
@@ -105,7 +105,7 @@ const checkOverseerrMerge = async (): Promise<boolean> => {
     );
   } catch (error) {
     logger.error('Failed to clean up corrupted quota values', {
-      label: 'Seerr Migration',
+      label: 'Scoutr Migration',
       error: error.message,
     });
   }
@@ -127,7 +127,7 @@ const checkOverseerrMerge = async (): Promise<boolean> => {
     }
   } catch (error) {
     logger.error('Failed to update Media status from Blacklisted to Deleted', {
-      label: 'Seerr Migration',
+      label: 'Scoutr Migration',
       error: error.message,
     });
     process.exit(1);
@@ -136,7 +136,7 @@ const checkOverseerrMerge = async (): Promise<boolean> => {
   // Set media server type to Plex (default for Overseerr)
   settings.main.mediaServerType = MediaServerType.PLEX;
 
-  // Replace default Overseerr values with Seerr values
+  // Replace default Overseerr values with Scoutr values
   if (settings.main.applicationTitle === 'Overseerr') {
     settings.main.applicationTitle = 'Scoutr';
   }
@@ -149,14 +149,14 @@ const checkOverseerrMerge = async (): Promise<boolean> => {
     await settings.save();
   } catch (error) {
     logger.error('Failed to save updated settings for Overseerr merge', {
-      label: 'Seerr Migration',
+      label: 'Scoutr Migration',
       error: error.message,
     });
     process.exit(1);
   }
 
-  logger.info('Yeah! Overseerr to Seerr migration completed successfully!', {
-    label: 'Seerr Migration',
+  logger.info('Yeah! Overseerr to Scoutr migration completed successfully!', {
+    label: 'Scoutr Migration',
   });
 
   return true;

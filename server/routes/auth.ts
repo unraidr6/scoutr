@@ -170,7 +170,7 @@ authRoutes.post('/plex', async (req, res, next) => {
           });
         } else {
           logger.info(
-            'Sign-in attempt from Plex user with access to the media server; creating new Seerr user',
+            'Sign-in attempt from Plex user with access to the media server; creating new Scoutr user',
             {
               label: 'API',
               ip: req.ip,
@@ -285,14 +285,14 @@ authRoutes.post('/jellyfin', async (req, res, next) => {
       select: { id: true, jellyfinDeviceId: true },
     });
 
-    let deviceId = 'BOT_seerr';
+    let deviceId = 'BOT_scoutr';
     if (user && user.id === 1) {
-      // Admin is always BOT_seerr
-      deviceId = 'BOT_seerr';
+      // Admin is always BOT_scoutr
+      deviceId = 'BOT_scoutr';
     } else if (user && user.jellyfinDeviceId) {
       deviceId = user.jellyfinDeviceId;
     } else if (body.username) {
-      deviceId = Buffer.from(`BOT_seerr_${body.username}`).toString('base64');
+      deviceId = Buffer.from(`BOT_scoutr_${body.username}`).toString('base64');
     }
 
     // First we need to attempt to log the user in to jellyfin
@@ -340,7 +340,7 @@ authRoutes.post('/jellyfin', async (req, res, next) => {
 
       if (missingAdminUser) {
         logger.info(
-          'Sign-in attempt from Jellyfin user with access to the media server; creating initial admin user for Seerr',
+          'Sign-in attempt from Jellyfin user with access to the media server; creating initial admin user for Scoutr',
           {
             label: 'API',
             ip: req.ip,
@@ -369,7 +369,7 @@ authRoutes.post('/jellyfin', async (req, res, next) => {
         await userRepository.save(user);
       } else {
         logger.info(
-          'Sign-in attempt from Jellyfin user with access to the media server; editing admin user for Seerr',
+          'Sign-in attempt from Jellyfin user with access to the media server; editing admin user for Scoutr',
           {
             label: 'API',
             ip: req.ip,
@@ -462,7 +462,7 @@ authRoutes.post('/jellyfin', async (req, res, next) => {
       });
     } else if (!user) {
       logger.info(
-        'Sign-in attempt from Jellyfin user with access to the media server; creating new Seerr user',
+        'Sign-in attempt from Jellyfin user with access to the media server; creating new Scoutr user',
         {
           label: 'API',
           ip: req.ip,
@@ -748,7 +748,7 @@ authRoutes.post(
       });
 
       const deviceId = Buffer.from(
-        `BOT_seerr_${account.User.Name ?? ''}`
+        `BOT_scoutr_${account.User.Name ?? ''}`
       ).toString('base64');
 
       if (user) {
@@ -779,7 +779,7 @@ authRoutes.post(
         });
       } else {
         logger.info(
-          'Quick Connect sign-in from new Jellyfin user; creating new Seerr user',
+          'Quick Connect sign-in from new Jellyfin user; creating new Scoutr user',
           {
             label: 'API',
             ip: req.ip,
@@ -859,7 +859,7 @@ authRoutes.post('/local', async (req, res, next) => {
       .getOne();
 
     if (!user || !(await user.passwordMatch(body.password))) {
-      logger.warn('Failed sign-in attempt using invalid Seerr password', {
+      logger.warn('Failed sign-in attempt using invalid Scoutr password', {
         label: 'API',
         ip: req.ip,
         email: body.email,
@@ -878,7 +878,7 @@ authRoutes.post('/local', async (req, res, next) => {
 
     return res.status(200).json(user?.filter() ?? {});
   } catch (e) {
-    logger.error('Something went wrong authenticating with Seerr password', {
+    logger.error('Something went wrong authenticating with Scoutr password', {
       label: 'API',
       errorMessage: e.message,
       ip: req.ip,
@@ -917,7 +917,7 @@ authRoutes.post('/logout', async (req, res, next) => {
             await axios.delete(`${baseUrl}/Devices`, {
               params: { Id: user.jellyfinDeviceId },
               headers: {
-                Authorization: `MediaBrowser Client="Seerr", Device="Seerr", DeviceId="seerr", Version="${
+                Authorization: `MediaBrowser Client="Scoutr", Device="Scoutr", DeviceId="scoutr", Version="${
                   settings.main.mediaServerType === MediaServerType.EMBY
                     ? '1.0.0'
                     : getAppVersion()

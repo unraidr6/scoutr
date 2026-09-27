@@ -57,7 +57,7 @@ const LocalLogin = ({ revalidate }: LocalLoginProps) => {
     <Formik
       initialValues={{
         email:
-          process.env.unsafeDoNotUseDemo === 'true' ? 'demo@seerr.dev' : '',
+          process.env.unsafeDoNotUseDemo === 'true' ? 'demo@scoutr.dev' : '',
         password: process.env.unsafeDoNotUseDemo === 'true' ? 'test1234' : '',
       }}
       validationSchema={LoginSchema}

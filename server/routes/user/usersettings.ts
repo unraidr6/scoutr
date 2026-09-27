@@ -284,7 +284,7 @@ userSettingsRoutes.post<{ authToken: string }>(
     // Do not allow linking of an already linked account
     if (await userRepository.exist({ where: { plexId: account.id } })) {
       return res.status(422).json({
-        message: 'This Plex account is already linked to a Seerr user',
+        message: 'This Plex account is already linked to a Scoutr user',
       });
     }
 
@@ -387,13 +387,13 @@ userSettingsRoutes.post<{ username: string; password: string }>(
       })
     ) {
       return res.status(422).json({
-        message: 'The specified account is already linked to a Seerr user',
+        message: 'The specified account is already linked to a Scoutr user',
       });
     }
 
     const hostname = getHostname();
     const deviceId = Buffer.from(
-      req.user?.id === 1 ? 'BOT_seerr' : `BOT_seerr_${req.user.username ?? ''}`
+      req.user?.id === 1 ? 'BOT_scoutr' : `BOT_scoutr_${req.user.username ?? ''}`
     ).toString('base64');
 
     const jellyfinserver = new JellyfinAPI(hostname, undefined, deviceId);
@@ -422,7 +422,7 @@ userSettingsRoutes.post<{ username: string; password: string }>(
         })
       ) {
         return res.status(422).json({
-          message: 'The specified account is already linked to a Seerr user',
+          message: 'The specified account is already linked to a Scoutr user',
         });
       }
 
@@ -560,13 +560,13 @@ userSettingsRoutes.post<{ secret: string }>(
         })
       ) {
         return res.status(422).json({
-          message: 'The specified account is already linked to a Seerr user',
+          message: 'The specified account is already linked to a Scoutr user',
         });
       }
 
       const user = req.user;
       const deviceId = Buffer.from(
-        user.id === 1 ? 'BOT_seerr' : `BOT_seerr_${user.username ?? ''}`
+        user.id === 1 ? 'BOT_scoutr' : `BOT_scoutr_${user.username ?? ''}`
       ).toString('base64');
 
       user.userType = UserType.JELLYFIN;
